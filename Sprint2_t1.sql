@@ -57,12 +57,13 @@ SELECT producto.nombre,  producto.precio,  fabricante.nombre FROM producto INNER
 /* 33 */ SELECT DISTINCT producto.codigo_fabricante, fabricante.nombre FROM producto INNER JOIN fabricante ON producto.codigo_fabricante = fabricante.codigo;
 /*34 Retorna un llistat de tots els fabricants que existeixen en la base de dades, juntament amb els productes que té cadascun d'ells. El llistat haurà de mostrar també aquells fabricants que no tenen productes associats.*/
 SELECT fabricante.nombre, producto.nombre FROM fabricante LEFT JOIN producto ON producto.codigo_fabricante = fabricante.codigo;
-/* 35 */SELECT fabricante.nombre , producto.nombre FROM fabricante LEFT JOIN producto ON 
+/* 35 */SELECT fabricante.nombre , producto.nombre FROM fabricante LEFT JOIN producto ON producto.codigo_fabricante = fabricante.codigo WHERE producto.codigo IS null;
 
-Retorna un llistat on només apareguin aquells fabricants que no tenen cap producte associat.
+/*posible a resolver mas tarde
+
 Retorna tots els productes del fabricant Lenovo. (Sense utilitzar INNER JOIN).
 Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricant Lenovo. (Sense fer servir INNER JOIN).
 Llista el nom del producte més car del fabricant Lenovo.
 Llista el nom del producte més barat del fabricant Hewlett-Packard.
 Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
-Llesta tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
+Llesta tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.*/
